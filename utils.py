@@ -147,7 +147,8 @@ def patch_apk(
         for e in excludes:
             command.append("-d")
             command.append(e)
-
+    command.append("--continue-on-error")
+    
     command.append(apk)
 
     subprocess.run(command).check_returncode()
